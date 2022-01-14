@@ -8,4 +8,4 @@ class TestSong(unittest.TestCase):
        self.song2 = Song("Right Down The Line")
 
     def test_can_create_song(self):
-        self.assertEqual("Kind Of Blue", self.song1.title)
+        self.assertEqual("Kind Of Blue", self.song1.artist)
