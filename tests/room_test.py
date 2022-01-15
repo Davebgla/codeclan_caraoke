@@ -6,8 +6,8 @@ from src.song import Song
 class TestRoom(unittest.TestCase):
 
     def setUp(self):
-       self.room1 = Room("Blue Room")
-       self.room2 = Room("Green Room")
+       self.room1 = Room("Blue Room", 6, 5)
+       self.room2 = Room("Green Room", 6, 5)
        self.room_list = [self.room1, self.room2]
        self.guest1 = Guest("Ricardo", 50)
        self.guest2 = Guest("Antonia", 100)
@@ -15,27 +15,40 @@ class TestRoom(unittest.TestCase):
        self.song1 = Song("Kind Of Blue")
        self.song2 = Song("Right Down The Line")
        self.song_list = [self.song1, self.song2]
+      
 
-
-    
-    def test_can_create_room(self):
+    def test_room_has_name(self):
         self.assertEqual("Blue Room", self.room1.name)
 
-    def test_check_in_guest(self):
-        self.room1.check_in_guest(Guest)
-        self.assertEqual(3, self.room1.guest_count())
+    def test_room_has_capacity(self):
+        self.assertEqual(6, self.room2.capacity)
 
-    def test_check_out_guest(self):
-        self.room1.check_out_guest(Guest)
-        self.assertEqual(1, self.room1.guest_count())
+    def test_check_in(self):
+        self.room2.check_in(self.guest1)
+        self.assertEqual(1, len(self.room2.guests_in_room))
 
-    def test_can_add_song_to_room(self):
-        self.room1.add_song(Song)
-        self.assertEqual(3, self.room1.song_count())
+    def guest_check_out(self):
+        self.room2.check_out(self.guest2)
+        self.assertEqual(0, len(self.room2.guests_in_room))
 
-    def test_room_is_full(self):
-        self.room1.room_is_full
-        self.assertEqual(2, self.room1.guest_count())
+    def test_add_song(self):
+        self.room2.add_song(self.song2)
+        self.assertEqual(1, len(self.room2.song_choice))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
 

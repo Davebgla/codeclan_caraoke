@@ -1,6 +1,30 @@
+
 class Guest:
-    def __init__(self, name, money):
+    def __init__(self, name, wallet):
         self.name = name
-        self.money = money
+        self.wallet = wallet
        
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+       
+      
