@@ -39,6 +39,14 @@ class TestRoom(unittest.TestCase):
         self.room.add_song(song)
         self.assertEqual(1, self.room.song_count())
 
+    def test_room_has_capacity(self):
+        self.assertEqual(10, self.room.capacity)
+
+    def test_if_room_too_full(self):
+        self.room.check_capacity
+        self.assertEqual(10, self.room.capacity)
+
+
 
 
 

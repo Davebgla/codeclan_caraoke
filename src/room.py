@@ -24,6 +24,12 @@ class Room:
     def add_song(self, add_song_to_room):
         self.songs.append(add_song_to_room)
 
+    def check_capacity(self, capacity):
+        for num_of_guests in capacity:
+            if num_of_guests <= capacity:
+                return "Enter!"
+            else:
+                return "Room too Full!"
 
 
 
